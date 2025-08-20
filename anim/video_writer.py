@@ -1,14 +1,13 @@
-import glob
 import os
 import subprocess
 import tempfile
+import shutil
 
 DEFAULT_FPS = 24
 DEFAULT_OUTPUT_PATH = 'video.mov'
 
 # Set `FFMPEG_PATH` to the local path of your installation of ffmpeg.
-# I use the Homebrew version: https://formulae.brew.sh/formula/ffmpeg
-DEFAULT_FFMPEG_PATH = glob.glob('/usr/local/Cellar/ffmpeg/*/bin/ffmpeg')[-1]
+DEFAULT_FFMPEG_PATH = shutil.which("ffmpeg")
 
 
 class VideoWriter:
